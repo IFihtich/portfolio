@@ -1,0 +1,4 @@
+name: CustomInvulnerable
+version: '${version}'
+main: kz.ifihtich.custominvulnerable.CustomInvulnerable
+api-version: '1.21'
