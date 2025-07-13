@@ -1,0 +1,18 @@
+messages:
+  - 'Добро пожаловать %player%'
+  - 'Дорогой друг'
+discord:
+  - 'Ссылка на дискорд сервер - *ссылка*'
+top:
+  blocks:
+    - ''
+  clan_coins:
+    - ''
+  coins:
+    - ''
+  me:
+    - ''
+  online:
+    - ''
+  pvp:
+    - ''

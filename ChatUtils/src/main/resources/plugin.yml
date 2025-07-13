@@ -1,0 +1,7 @@
+name: ChatUtils
+version: '${version}'
+main: kz.ifihtich.chatutils.ChatUtils
+api-version: '1.21'
+commands:
+  discord:
+  top:
