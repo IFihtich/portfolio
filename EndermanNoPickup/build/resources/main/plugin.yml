@@ -1,0 +1,4 @@
+name: EndermanNoPickup
+version: '1.0-SNAPSHOT'
+main: kz.ifihtich.endermannopickup.EndermanNoPickup
+api-version: '1.21'

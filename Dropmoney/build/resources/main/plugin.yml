@@ -1,0 +1,4 @@
+name: Dropmoney
+version: '1.0-SNAPSHOT'
+main: kz.ifihtich.dropmoney.Dropmoney
+api-version: '1.21'
