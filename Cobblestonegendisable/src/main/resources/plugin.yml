@@ -1,0 +1,4 @@
+name: Cobblestonegendisable
+version: '${version}'
+main: kz.ifihtich.cobblestonegendisable.Cobblestonegendisable
+api-version: '1.21'
