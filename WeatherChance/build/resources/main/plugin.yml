@@ -1,0 +1,4 @@
+name: WeatherChance
+version: '1.0-SNAPSHOT'
+main: kz.ifihtich.weatherchance.WeatherChance
+api-version: '1.21'

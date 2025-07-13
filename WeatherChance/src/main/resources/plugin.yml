@@ -1,0 +1,4 @@
+name: WeatherChance
+version: '${version}'
+main: kz.ifihtich.weatherchance.WeatherChance
+api-version: '1.21'
