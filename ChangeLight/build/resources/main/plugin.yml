@@ -1,0 +1,4 @@
+name: ChangeLight
+version: '1.0-SNAPSHOT'
+main: kz.ifihtich.changeLight.ChangeLight
+api-version: '1.21'
