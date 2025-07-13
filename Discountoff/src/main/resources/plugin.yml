@@ -1,0 +1,4 @@
+name: Discountoff
+version: '${version}'
+main: kz.ifihtich.discountoff.Discountoff
+api-version: '1.21'
