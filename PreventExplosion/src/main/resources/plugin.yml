@@ -1,0 +1,5 @@
+name: PreventExplosion
+version: '${version}'
+main: kz.ifihtich.preventexplosion.PreventExplosion
+api-version: '1.21'
+depend: [NBTAPI]

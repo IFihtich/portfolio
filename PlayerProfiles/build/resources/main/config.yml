@@ -1,0 +1,1146 @@
+messages:
+  setLike: '&aВы поставили лайк игроку %player%'
+  setDislike: '&cВы поставили дизлайк игроку %player%'
+  already: '&cВы уже голосовали за этого игрока!'
+  offline: '&cИгрок %player% не в сети'
+  reload: '&aКонфиг перезагружен'
+  permission: '&cНет прав'
+  noVote: 'Чтобы отменить свой голос сначала нужно проголосовать'
+  voteCancelled: 'Вы отменили голос за игрока %player%'
+  #Когда достижение выполнено/не выполнено
+  done: "&aВыполнено!"
+  not_completed: "&cНе выполнено"
+sound:
+  like:
+    enable: true
+    sound: entity.player.levelup
+    volume: 1.0
+    pitch: 1.0
+  dislike:
+    enable: true
+    sound: block.note_block.bit
+    volume: 1.0
+    pitch: 1.0
+  vote_cancelled:
+    enable: true
+    sound: block.note_block.bit
+    volume: 1.0
+    pitch: 1.0
+
+
+
+MainProfileMenu:  #Главное меню профиля
+  name: "Профиль игрока &b%player%"
+  size: 45
+  slots:
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: ' '
+      glow: true
+      slot:
+        - 0
+        - 1
+        - 7
+        - 8
+        - 9
+        - 17
+        - 27
+        - 35
+        - 36
+        - 37
+        - 43
+        - 44
+      itemflags:
+        - HIDE_ADDITIONAL_TOOLTIP
+    like:
+      material: GREEN_TERRACOTTA
+      name: '&aНажмите, чтобы поставить лайк'
+      glow: true
+      slot: 20
+      action:
+        type: like
+    dislike:
+      material: RED_TERRACOTTA
+      name: '&cНажмите, чтобы поставить дизлайк'
+      glow: true
+      slot: 24
+      action:
+        type: dislike
+    achieve:
+      material: PAPER
+      name: "Достижения"
+      slot: 40
+      action:
+        type: open
+        menu: "Achievements"
+    skull:
+      material: PLAYER_HEAD
+      name: "&e%player%"
+      skin: "%player%"
+      lore:
+        - 'Лайков - %like%/Дизлайков - %dislike%'
+        - '&aРейтинг: &b%rating%'
+      slot: 22
+    statistic:
+      material: clock
+      name: "&aСтатистика игрока %player%"
+      slot: 4
+      action:
+        type: open
+        menu: "statistic"
+        sound: entity.player.levelup
+    cancel_vote:
+      material: red_concrete
+      name: "&6Отмена голоса"
+      slot: 31
+      action:
+        type: cancel_vote
+Achievements: #Главная страница с категорией достижений
+  name: "Достижения игрока %player%"
+  size: 45
+  slots:
+    nether:
+      material: red_nether_bricks
+      name: '&fНезер'
+      slot: 0
+      action:
+        type: open
+        menu: "nether"
+    adventure:
+      material: map
+      name: "&fПриключения"
+      slot: 1
+      action:
+        type: open
+        menu: "adventure"
+    end:
+      material: end_stone
+      name: '&fЭнд'
+      slot: 2
+      action:
+        type: open
+        menu: "end"
+    husbandry:
+      material: hay_block
+      name: '&fСельское хозяйство'
+      slot: 3
+      action:
+        type: open
+        menu: "husbandry"
+    minecraft:
+      material: grass_block
+      name: '&fMinecraft'
+      slot: 4
+      action:
+        type: open
+        menu: "minecraft"
+    back:
+      material: arrow
+      name: '&7Назад'
+      slot: 36
+      action:
+        type: open
+        menu: "MainProfileMenu"
+nether:  #Раздел АД
+  name: "&0Незер"
+  size: 54
+  slots:
+    1:
+      material: red_nether_bricks
+      slot: 0
+      name: "&eНезер"
+      action:
+        type: achievement
+        achievement: nether/root
+    2:
+      material: fire_charge
+      slot: 1
+      name: "&eВернуть отправителю"
+      action:
+        type: achievement
+        achievement: nether/return_to_sender
+    3:
+      material: polished_blackstone_bricks
+      slot: 2
+      name: "&eНаф-Наф тут больше не живёт"
+      action:
+        type: achievement
+        achievement: nether/find_bastion
+    4:
+      material: ancient_debris
+      slot: 3
+      name: "&eОсколки прошлого"
+      action:
+        type: achievement
+        achievement: nether/obtain_ancient_debris
+    5:
+      material: map
+      slot: 4
+      name: "&eКротовая нора"
+      action:
+        type: achievement
+        achievement: nether/fast_travel
+    6:
+      material: nether_bricks
+      slot: 5
+      name: "&eЧертоги страха"
+      action:
+        type: achievement
+        achievement: nether/find_fortress
+    7:
+      material: crying_obsidian
+      slot: 6
+      name: "&eОбсидиановы слёзы"
+      action:
+        type: achievement
+        achievement: nether/obtain_crying_obsidian
+    8:
+      material: gold_ingot
+      slot: 7
+      name: "&eБранзулетка!"
+      action:
+        type: achievement
+        achievement: nether/distract_piglin
+    9:
+      material: warped_fungus_on_a_stick
+      slot: 8
+      name: "&eТы неси по лаве меня"
+      action:
+        type: achievement
+        achievement: nether/ride_strider
+    10:
+      material: ghast_tear
+      slot: 9
+      name: "&eВойна миров"
+      action:
+        type: achievement
+        achievement: nether/uneasy_alliance
+    11:
+      material: chest
+      slot: 10
+      name: "&eБыло ваше — стало наше!"
+      action:
+        type: achievement
+        achievement: nether/loot_bastion
+    12:
+      material: lodestone
+      slot: 11
+      name: "&eПутеводный камень"
+      action:
+        type: achievement
+        achievement: nether/use_lodestone
+    13:
+      material: netherite_chestplate
+      slot: 12
+      name: "&eЛадные доспехи"
+      action:
+        type: achievement
+        achievement: nether/netherite_armor
+    14:
+      material: wither_skeleton_skull
+      slot: 13
+      name: "&eБедный Йорик!"
+      action:
+        type: achievement
+        achievement: nether/get_wither_skull
+    15:
+      material: blaze_rod
+      slot: 14
+      name: "&eВ полымя"
+      action:
+        type: achievement
+        achievement: nether/obtain_blaze_rod
+    16:
+      material: respawn_anchor
+      slot: 15
+      name: "&eЛарец Кощея"
+      action:
+        type: achievement
+        achievement: nether/charge_respawn_anchor
+    17:
+      material: warped_fungus_on_a_stick
+      slot: 16
+      name: "&eСовсем как дома"
+      action:
+        type: achievement
+        achievement: nether/ride_strider_in_overworld_lava
+    18:
+      material: netherite_boots
+      slot: 17
+      name: "&eГорящий тур"
+      action:
+        type: achievement
+        achievement: nether/explore_nether
+    19:
+      material: nether_star
+      slot: 18
+      name: "&eЧудо-юдо"
+      action:
+        type: achievement
+        achievement: nether/summon_wither
+    20:
+      material: potion
+      slot: 19
+      name: "&eМестный зельевар"
+      action:
+        type: achievement
+        achievement: nether/brew_potion
+    21:
+      material: beacon
+      slot: 20
+      name: "&eЖеланный свет"
+      action:
+        type: achievement
+        achievement: nether/create_beacon
+    22:
+      material: milk_bucket
+      slot: 21
+      name: "&eЭнергетический коктейль"
+      action:
+        type: achievement
+        achievement: nether/all_potions
+    23:
+      material: beacon
+      slot: 22
+      name: "&eМаяковский"
+      action:
+        type: achievement
+        achievement: nether/create_full_beacon
+    24:
+      material: bucket
+      slot: 23
+      name: "&eНевозможное возможно!"
+      action:
+        type: achievement
+        achievement: nether/all_effects
+    back:
+      material: arrow
+      name: "&7Назад"
+      slot: 45
+      action:
+        type: open
+        menu: "Achievements"
+adventure:  #Раздел Приключения
+  name: "&0Приключения"
+  size: 54
+  slots:
+    1:
+      material: map
+      slot: 0
+      name: "&eПриключения"
+      action:
+        type: achievement
+        achievement: adventure/root
+
+    2:
+      material: white_banner
+      slot: 1
+      name: "&eДобровольное изгнание"
+      action:
+        type: achievement
+        achievement: adventure/voluntary_exile
+
+    3:
+      material: spyglass
+      slot: 2
+      name: "&eЭто птица?"
+      action:
+        type: achievement
+        achievement: adventure/spyglass_at_parrot
+
+    4:
+      material: iron_sword
+      slot: 3
+      name: "&eОхотник на монстров"
+      action:
+        type: achievement
+        achievement: adventure/kill_a_mob
+
+    5:
+      material: chiseled_bookshelf
+      slot: 4
+      name: "&eЗнание — сила"
+      action:
+        type: achievement
+        achievement: adventure/read_power_of_chiseled_bookshelf
+
+    6:
+      material: emerald
+      slot: 5
+      name: "&eНе отходя от кассы!"
+      action:
+        type: achievement
+        achievement: adventure/trade
+
+    7:
+      material: dune_armor_trim_smithing_template
+      slot: 6
+      name: "&eС чистого литья"
+      action:
+        type: achievement
+        achievement: adventure/trim_with_any_armor_pattern
+
+    8:
+      material: honey_block
+      slot: 7
+      name: "&eЗамёдленное падение"
+      action:
+        type: achievement
+        achievement: adventure/honey_block_slide
+
+    9:
+      material: crossbow
+      slot: 8
+      name: "&eСамострел"
+      action:
+        type: achievement
+        achievement: adventure/ol_betsy
+
+    10:
+      material: lightning_rod
+      slot: 9
+      name: "&eКуда молния бьёт дважды"
+      action:
+        type: achievement
+        achievement: adventure/lightning_rod_with_villager_no_fire
+
+    11:
+      material: water_bucket
+      slot: 10
+      name: "&eПещеры и скалы"
+      action:
+        type: achievement
+        achievement: adventure/fall_from_world_height
+
+    12:
+      material: brush
+      slot: 11
+      name: "&eКрупицы истории"
+      action:
+        type: achievement
+        achievement: adventure/salvage_sherd
+
+    13:
+      material: sculk_sensor
+      slot: 12
+      name: "&eмыш (кродеться)"
+      action:
+        type: achievement
+        achievement: adventure/avoid_vibration
+
+    14:
+      material: red_bed
+      slot: 13
+      name: "&eСпи, моя радость, усни"
+      action:
+        type: achievement
+        achievement: adventure/sleep_in_bed
+
+    15:
+      material: white_banner
+      slot: 14
+      name: "&eГерой деревни"
+      action:
+        type: achievement
+        achievement: adventure/hero_of_the_village
+
+    16:
+      material: spyglass
+      slot: 15
+      name: "&eЭто аэростат?"
+      action:
+        type: achievement
+        achievement: adventure/spyglass_at_ghast
+
+    17:
+      material: trident
+      slot: 16
+      name: "&eПопасть впросак"
+      action:
+        type: achievement
+        achievement: adventure/throw_trident
+
+    18:
+      material: sculk_catalyst
+      slot: 17
+      name: "&eОно живое"
+      action:
+        type: achievement
+        achievement: adventure/kill_mob_near_sculk_catalyst
+
+    19:
+      material: bow
+      slot: 18
+      name: "&eТочно в цель"
+      action:
+        type: achievement
+        achievement: adventure/shoot_arrow
+
+    20:
+      material: diamond_sword
+      slot: 19
+      name: "&eЗверобой"
+      action:
+        type: achievement
+        achievement: adventure/kill_all_mobs
+
+    21:
+      material: totem_of_undying
+      slot: 20
+      name: "&eСвет в конце тоннеля"
+      action:
+        type: achievement
+        achievement: adventure/totem_of_undying
+
+    22:
+      material: carved_pumpkin
+      slot: 21
+      name: "&eТри закона големотехники"
+      action:
+        type: achievement
+        achievement: adventure/summon_iron_golem
+
+    23:
+      material: emerald
+      slot: 22
+      name: "&eЗвёздный торговец"
+      action:
+        type: achievement
+        achievement: adventure/trade_at_world_height
+
+    24:
+      material: silence_armor_trim_smithing_template
+      slot: 23
+      name: "&eКузнец своего стиля"
+      action:
+        type: achievement
+        achievement: adventure/trim_with_all_exclusive_armor_patterns
+
+    25:
+      material: crossbow
+      slot: 24
+      name: "&eДвух птиц одним выстрелом"
+      action:
+        type: achievement
+        achievement: adventure/two_birds_one_arrow
+
+    26:
+      material: crossbow
+      slot: 25
+      name: "&eИ кто тут теперь разбойник?"
+      action:
+        type: achievement
+        achievement: adventure/whos_the_pillager_now
+
+    27:
+      material: crossbow
+      slot: 26
+      name: "&eАрбаллистика"
+      action:
+        type: achievement
+        achievement: adventure/arbalistic
+
+    28:
+      material: decorated_pot
+      slot: 27
+      name: "&eЭпоха возрождения"
+      action:
+        type: achievement
+        achievement: adventure/craft_decorated_pot_using_only_sherds
+    29:
+      material: diamond_boots
+      slot: 28
+      name: "&eВремя приключений"
+      action:
+        type: achievement
+        achievement: adventure/adventuring_time
+    30:
+      material: jukebox
+      slot: 29
+      name: "&eИграй, гармония!"
+      action:
+        type: achievement
+        achievement: adventure/play_jukebox_in_meadows
+    31:
+      material: leather_boots
+      slot: 30
+      name: "&eПрыткий как заяц"
+      action:
+        type: achievement
+        achievement: adventure/walk_on_powder_snow_with_leather_boots
+    32:
+      material: spyglass
+      slot: 31
+      name: "&eЭто самолёт?"
+      action:
+        type: achievement
+        achievement: adventure/spyglass_at_dragon
+    33:
+      material: trident
+      slot: 32
+      name: "&eГрянул майский гром"
+      action:
+        type: achievement
+        achievement: adventure/very_very_frightening
+    34:
+      material: arrow
+      slot: 33
+      name: "&eСнайперская дуэль"
+      action:
+        type: achievement
+        achievement: adventure/sniper_duel
+    35:
+      material: target
+      slot: 34
+      name: "&eВ яблочко!"
+      action:
+        type: achievement
+        achievement: adventure/bullseye
+    36:
+      material: armadillo_scute
+      slot: 35
+      name: "&eЛасковый и беззащитный зверь"
+      action:
+        type: achievement
+        achievement: adventure/brush_armadillo
+    37:
+      material: chiseled_tuff
+      slot: 36
+      name: "&eMinecraft: пробное издание"
+      action:
+        type: achievement
+        achievement: adventure/minecraft_trials_edition
+    38:
+      material: crafter
+      slot: 37
+      name: "&eДо чего дошёл прогресс"
+      action:
+        type: achievement
+        achievement: adventure/crafters_crafting_crafters
+    39:
+      material: copper_bulb
+      slot: 38
+      name: "&eЛампа Аладдина"
+      action:
+        type: achievement
+        achievement: adventure/lighten_up
+    40:
+      material: wind_charge
+      slot: 39
+      name: "&eВерхом на ветре"
+      action:
+        type: achievement
+        achievement: adventure/who_needs_rockets
+    41:
+      material: trial_key
+      slot: 40
+      name: "&eЗолотой ключик"
+      action:
+        type: achievement
+        achievement: adventure/under_lock_and_key
+    42:
+      material: ominous_trial_key
+      slot: 41
+      name: "&eНепросто ларчик открывался"
+      action:
+        type: achievement
+        achievement: adventure/revaulting
+    43:
+      material: wind_charge
+      slot: 42
+      name: "&eНе дуйся"
+      action:
+        type: achievement
+        achievement: adventure/blowback
+    44:
+      material: mace
+      slot: 43
+      name: "&eЕсть пробитие!"
+      action:
+        type: achievement
+        achievement: adventure/overoverkill
+    back:
+      material: arrow
+      name: "&7Назад"
+      slot: 45
+      action:
+        type: open
+        menu: "Achievements"
+end:  #Раздел Энд
+  name: "&0Энд"
+  size: 54
+  slots:
+    1:
+      material: end_stone
+      slot: 0
+      name: "&eЭнд"
+      action:
+        type: achievement
+        achievement: end/root
+    2:
+      material: dragon_head
+      slot: 1
+      name: "&eОсвободите Энд"
+      action:
+        type: achievement
+        achievement: end/kill_dragon
+    3:
+      material: dragon_egg
+      slot: 2
+      name: "&eНовое поколение"
+      action:
+        type: achievement
+        achievement: end/dragon_egg
+    4:
+      material: ender_pearl
+      slot: 3
+      name: "&eИдеальный побег"
+      action:
+        type: achievement
+        achievement: end/enter_end_gateway
+    5:
+      material: end_crystal
+      slot: 4
+      name: "&eДежавю"
+      action:
+        type: achievement
+        achievement: end/respawn_dragon
+    6:
+      material: dragon_breath
+      slot: 5
+      name: "&eОсвежи дыхание"
+      action:
+        type: achievement
+        achievement: end/dragon_breath
+    7:
+      material: purpur_block
+      slot: 6
+      name: "&eБудь как дома, путник"
+      action:
+        type: achievement
+        achievement: end/find_end_city
+    8:
+      material: elytra
+      slot: 7
+      name: "&eГде твои крылья?"
+      action:
+        type: achievement
+        achievement: end/elytra
+    9:
+      material: shulker_shell
+      slot: 8
+      name: "&eПрекрасный вид!"
+      action:
+        type: achievement
+        achievement: end/levitate
+    back:
+      material: arrow
+      name: "&7Назад"
+      slot: 45
+      action:
+        type: open
+        menu: "Achievements"
+husbandry:  #Раздел сельское хозяйство
+  name: "&0Сельское хозяйство"
+  size: 54
+  slots:
+    1:
+      material: hay_block
+      slot: 0
+      name: "&eСельское хозяйство"
+      action:
+        type: achievement
+        achievement: husbandry/root
+    2:
+      material: honey_bottle
+      slot: 1
+      name: "&eПора подкрепиться"
+      action:
+        type: achievement
+        achievement: husbandry/safely_harvest_honey
+    3:
+      material: wheat
+      slot: 2
+      name: "&eРомантический ужин"
+      action:
+        type: achievement
+        achievement: husbandry/breed_an_animal
+    4:
+      material: cookie
+      slot: 3
+      name: "&eПросто так!"
+      action:
+        type: achievement
+        achievement: husbandry/allay_deliver_item_to_player
+    5:
+      material: oak_boat
+      slot: 4
+      name: "&eВолк, коза и капуста"
+      action:
+        type: achievement
+        achievement: husbandry/ride_a_boat_with_a_goat
+    6:
+      material: lead
+      slot: 5
+      name: "&eДруг человека"
+      action:
+        type: achievement
+        achievement: husbandry/tame_an_animal
+    7:
+      material: glow_ink_sac
+      slot: 6
+      name: "&eЧтенье — свет!"
+      action:
+        type: achievement
+        achievement: husbandry/make_a_sign_glow
+    8:
+      material: fishing_rod
+      slot: 7
+      name: "&eНа крючке"
+      action:
+        type: achievement
+        achievement: husbandry/fishy_business
+    9:
+      material: bee_nest
+      slot: 8
+      name: "&eПолосатый груз"
+      action:
+        type: achievement
+        achievement: husbandry/silk_touch_nest
+    10:
+      material: bucket
+      slot: 9
+      name: "&eПочётный пассажир"
+      action:
+        type: achievement
+        achievement: husbandry/tadpole_in_a_bucket
+    11:
+      material: sniffer_egg
+      slot: 10
+      name: "&eЛегенда о нюхозавре"
+      action:
+        type: achievement
+        achievement: husbandry/obtain_sniffer_egg
+    12:
+      material: wheat
+      slot: 11
+      name: "&eПоле чудес"
+      action:
+        type: achievement
+        achievement: husbandry/plant_seed
+    13:
+      material: honeycomb
+      slot: 12
+      name: "&eНавести воск"
+      action:
+        type: achievement
+        achievement: husbandry/wax_on
+    14:
+      material: golden_carrot
+      slot: 13
+      name: "&eСчастливый фермер"
+      action:
+        type: achievement
+        achievement: husbandry/bred_all_animals
+    15:
+      material: note_block
+      slot: 14
+      name: "&eТолько раз в году!"
+      action:
+        type: achievement
+        achievement: husbandry/allay_deliver_cake_to_note_block
+    16:
+      material: cod
+      slot: 15
+      name: "&eПолный котолог"
+      action:
+        type: achievement
+        achievement: husbandry/complete_catalogue
+    17:
+      material: pufferfish_bucket
+      slot: 16
+      name: "&eРыбацкая хитрость"
+      action:
+        type: achievement
+        achievement: husbandry/tactical_fishing
+    18:
+      material: lead
+      slot: 17
+      name: "&eКто шагает дружно в ряд?"
+      action:
+        type: achievement
+        achievement: husbandry/leash_all_frog_variants
+    19:
+      material: torchflower_seeds
+      slot: 18
+      name: "&eНос не дорос"
+      action:
+        type: achievement
+        achievement: husbandry/feed_snifflet
+    20:
+      material: apple
+      slot: 19
+      name: "&eРобин-Бобин"
+      action:
+        type: achievement
+        achievement: husbandry/balanced_diet
+    21:
+      material: netherite_hoe
+      slot: 20
+      name: "&eЗаявка на победу"
+      action:
+        type: achievement
+        achievement: husbandry/obtain_netherite_hoe
+    22:
+      material: stone_axe
+      slot: 21
+      name: "&eУбрать воск"
+      action:
+        type: achievement
+        achievement: husbandry/wax_off
+    23:
+      material: axolotl_bucket
+      slot: 22
+      name: "&eЛасковый и нежный зверь"
+      action:
+        type: achievement
+        achievement: husbandry/axolotl_in_a_bucket
+    24:
+      material: verdant_froglight
+      slot: 23
+      name: "&eПерекрёсток семи болот"
+      action:
+        type: achievement
+        achievement: husbandry/froglights
+    25:
+      material: Pitcher_Pod
+      slot: 24
+      name: "&eПалеоботаника"
+      action:
+        type: achievement
+        achievement: husbandry/plant_any_sniffer_seed
+    26:
+      material: tropical_fish_bucket
+      slot: 25
+      name: "&eДружба — это чудо!"
+      action:
+        type: achievement
+        achievement: husbandry/kill_axolotl_target
+    27:
+      material: wolf_armor
+      slot: 26
+      name: "&eКак новенький"
+      action:
+        type: achievement
+        achievement: husbandry/repair_wolf_armor
+    28:
+      material: bone
+      slot: 27
+      name: "&eБарбоскины"
+      action:
+        type: achievement
+        achievement: husbandry/whole_pack
+    29:
+      material: shears
+      slot: 28
+      name: "&eИ овцы сыты, и волки целы"
+      action:
+        type: achievement
+        achievement: husbandry/remove_wolf_armor
+    back:
+      material: arrow
+      name: "&7Назад"
+      slot: 45
+      action:
+        type: open
+        menu: "Achievements"
+minecraft:  #Раздел Майнкрафт
+  name: "&0Minecraft"
+  size: 54
+  slots:
+    1:
+      material: grass_block
+      name: "&eMinecraft"
+      slot: 0
+      action:
+        type: achievement
+        achievement: story/root
+    2:
+      material: wooden_pickaxe
+      name: "&eКаменный век"
+      slot: 1
+      action:
+        type: achievement
+        achievement: story/mine_stone
+    3:
+      material: stone_pickaxe
+      name: "&eОбновка!"
+      slot: 2
+      action:
+        type: achievement
+        achievement: story/upgrade_tools
+    4:
+      material: iron_ingot
+      name: "&eКуй железо..."
+      slot: 3
+      action:
+        type: achievement
+        achievement: story/smelt_iron
+    5:
+      material: iron_chestplate
+      name: "&eДресс-код"
+      slot: 4
+      action:
+        type: achievement
+        achievement: story/obtain_armor
+    6:
+      material: lava_bucket
+      name: "&eГорячая штучка"
+      slot: 5
+      action:
+        type: achievement
+        achievement: story/lava_bucket
+    7:
+      material: iron_pickaxe
+      name: "&eИ кирка без дела ржавеет"
+      slot: 6
+      action:
+        type: achievement
+        achievement: story/iron_tools
+    8:
+      material: shield
+      name: "&eНе дождётесь!"
+      slot: 7
+      action:
+        type: achievement
+        achievement: story/deflect_arrow
+    9:
+      material: obsidian
+      name: "&eДве стихии"
+      slot: 8
+      action:
+        type: achievement
+        achievement: story/form_obsidian
+    10:
+      material: diamond
+      name: "&eАлмазы!"
+      slot: 9
+      action:
+        type: achievement
+        achievement: story/mine_diamond
+    11:
+      material: flint_and_steel
+      name: "&eОгненные недра"
+      slot: 10
+      action:
+        type: achievement
+        achievement: story/enter_the_nether
+    12:
+      material: diamond_chestplate
+      name: "&eОсыпь меня алмазами"
+      slot: 11
+      action:
+        type: achievement
+        achievement: story/shiny_gear
+    13:
+      material: enchanted_book
+      name: "&eЧародей"
+      slot: 12
+      action:
+        type: achievement
+        achievement: story/enchant_item
+    14:
+      material: golden_apple
+      name: "&eДоктор для зомби"
+      slot: 13
+      action:
+        type: achievement
+        achievement: story/cure_zombie_villager
+    15:
+      material: ender_eye
+      name: "&eНедреманное око"
+      slot: 14
+      action:
+        type: achievement
+        achievement: story/follow_ender_eye
+    16:
+      material: end_stone
+      name: "&eКонец?"
+      slot: 15
+      action:
+        type: achievement
+        achievement: story/enter_the_end
+    back:
+      material: arrow
+      name: "&7Назад"
+      slot: 45
+      action:
+        type: open
+        menu: "Achievements"
+
+statistic:  #Статистика
+  name: "&0Статистика игрока %player%"
+  size: 54
+  slots:
+    1:
+      material: clock
+      slot: 0
+      name: "&eДата первой игры"
+      lore:
+        - '%player_first_join_date%'
+    2:
+      material: diamond_ore
+      slot: 1
+      name: "&eДобыто алмазов"
+      lore:
+        - '%statistic_mine_block:DIAMOND_ORE%'
+    3:
+      material: skeleton_skull
+      slot: 2
+      name: "&eСмертей"
+      lore:
+        - '%statistic_deaths%'
+    4:
+      material: iron_sword
+      name: "&eУбито существ"
+      lore:
+        - '%statistic_mob_kills%'
+      slot: 3
+    5:
+      material: golden_block
+      name: "&eНаиграно времени"
+      lore:
+        - '%statistic_time_played%'
+      slot: 4
+    back:
+      material: arrow
+      name: "&7Назад"
+      slot: 45
+      action:
+        type: open
+        menu: "MainProfileMenu"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

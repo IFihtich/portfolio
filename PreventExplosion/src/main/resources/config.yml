@@ -1,0 +1,9 @@
+Prevent:  # true - защита блоков от взрыва, false - нет.
+  PRIMED_TNT: true # Динамит
+  TNT_MINECART: true # Динамит в вагонетке
+  CREEPER: true # Крипер
+  ENDER_CRYSTAL:
+    default: true   # Поставлен игроком
+    natural: true   # Природный кристалл (при появлении дракона)
+  WITHER: true # Визер
+  WITHER_SKULL: true # Голова визера

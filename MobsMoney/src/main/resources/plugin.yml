@@ -1,0 +1,6 @@
+name: MobsMoneyFix
+version: '${version}'
+main: kz.ifihtich.mobsmoney.MobsMoney
+api-version: '1.17'
+commands:
+  soundmoney:

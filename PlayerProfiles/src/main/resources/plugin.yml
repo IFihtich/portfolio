@@ -1,0 +1,7 @@
+name: PlayerProfiles
+version: '1.0-SNAPSHOT'
+main: kz.ifihtich.playerProfiles.PlayerProfiles
+api-version: '1.21'
+depend: [PlaceholderAPI]
+commands:
+  playerprofiles:

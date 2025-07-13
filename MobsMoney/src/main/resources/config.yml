@@ -1,0 +1,74 @@
+#       ____  ______  _____ _______ _____  ________      __
+#      |  _ \|  ____|/ ____|__   __|  __ \|  ____\ \    / /
+#      | |_) | |__  | (___    | |  | |  | | |__   \ \  / /
+#      |  _ <|  __|  \___ \   | |  | |  | |  __|   \ \/ /
+#      | |_) | |____ ____) |  | |  | |__| | |____   \  /
+#      |____/|______|_____/   |_|  |_____/|______|   \/
+
+
+#
+#   Studio: BestDev
+#   TG: https://t.me/bestdevstudio
+#   VK: https://vk.com/bestdevstudio
+
+drop:
+  visible: true #Видимость надписи над предметом
+
+messages:
+  kill-getplayer: "&a&l[$] &fВы подобрали &6$%money% &fс игрока &e%player%"
+  kill-getmobs:
+    boost: "&a&l[$] &fВы подобрали &6$%money%&f с моба &8(&6Буст +%boost%$&8)"
+    no-boost: "&a&l[$] &fВы подобрали &6$%money%&f с моба"
+  kill-deathplayer:
+    - "Вы умерли на координатах: &c[X: %x%, Y: %y%, Z: %z%]."
+    - "&fВас убил &e%player%&f, с вас выпало &6$%money%"
+  kill-deathother:
+    - "Вы умерли на координатах: &c[X: %x%, Y: %y%, Z: %z%]."
+    - "&fС вас выпало &6$%money%"
+
+
+#
+# Если вы делаете группы, которые друг друга наследуют,
+# то нужно каждой последующей группе ставить право mobsmoneymobmoney.name на false
+# чтобы работал бустер, например у вас есть три группы это name1, name2 которая наследует name1
+# и name3 которая наследует name2, тогда делаем так:
+# ==================================================================================================
+# name1 права: mobsmoneymobmoney.name1 - true
+# name2 права: mobsmoneymobmoney.name1 - false, mobsmoneymobmoney.name2 - true
+# name3 права: mobsmoneymobmoney.name2 - false, mobsmoneymobmoney.name3 - true
+#
+
+permissions:
+  vip: 1.5 #Множитель монет для группы vip
+  premium: 2.0 #Множитель монет для группы premium
+
+# Все числа указывать в виде 0.0
+money:
+  player: 0.1 #Процент денег с игрока
+  mobs: #Если моб не добавлен список, рандомится от сюда
+    min: 10.0
+    max: 20.0
+  kill_mob:
+    ZOMBIE_VILLIAGER: #Добавляйте нужных вам мобов
+      min: 10.0 #Минимальная сумма выдачи
+      max: 20.0 #Максимальная сумма выдачи
+    ZOMBIE:
+      min: 10.0
+      max: 20.0
+    PIG:
+      min: 5.0
+      max: 10.0
+    CHICKEN:
+      min: 10.0
+      max: 10.0
+
+######################################################################
+# BestDev
+#                           «BestDev»
+#                             2025
+#
+# • Teleram: t.me/bestdevstudio
+# • Vk:  https://vk.com/bestdevstudio
+#
+#                                                          BestDev
+######################################################################
