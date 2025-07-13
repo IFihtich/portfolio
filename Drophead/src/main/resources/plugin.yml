@@ -1,0 +1,4 @@
+name: Drophead
+version: '${version}'
+main: kz.ifihtich.drophead.Drophead
+api-version: '1.21'
