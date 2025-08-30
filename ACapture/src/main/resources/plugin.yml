@@ -1,0 +1,13 @@
+name: ACapture
+version: '${version}'
+main: kz.ifihtich.acapture.ACapture
+api-version: '1.16'
+commands:
+  acapture:
+    description: Управление точками захвата
+    usage: /<command> reload | givepoints <team> <amount>
+    permission: acapture.reload
+
+permissions:
+  acapture.reload:
+    default: op
